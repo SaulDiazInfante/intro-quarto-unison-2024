@@ -1,0 +1,68 @@
+{
+  "schedule.qmd": {
+    "schedule.html": "a69d69ca"
+  },
+  "index.qmd": {
+    "index.html": "a4978800"
+  },
+  "materials/01-intro-quarto.qmd": {
+    "01-intro-quarto.html": "51b8578c"
+  },
+  "materials/02-authoring.qmd": {
+    "02-authoring.html": "9ff0eef4"
+  },
+  "materials/03-computation-editors.qmd": {
+    "03-computation-editors.html": "c97317ce"
+  },
+  "materials/04-static-documents.qmd": {
+    "04-static-documents.html": "c8ccee67"
+  },
+  "materials/05-presentations.qmd": {
+    "05-presentations.html": "bca502b1"
+  },
+  "materials/06-websites.qmd": {
+    "06-websites.html": "9a3eba75"
+  },
+  "404.qmd": {
+    "404.html": "31e2f8c2"
+  },
+  "materials/07-plots-tables.qmd": {
+    "07-plots-tables.html": "3464b375"
+  },
+  "materials/08-advanced-knitr.qmd": {
+    "08-advanced-knitr.html": "7f1391e6"
+  },
+  "materials/static/custom-layout.qmd": {
+    "custom-layout.html": "10471058"
+  },
+  "materials/static/fancy-footnotes.qmd": {
+    "fancy-footnotes.html": "522c84a1"
+  },
+  "materials/static/figure-layout.qmd": {
+    "figure-layout.html": "c18488b4"
+  },
+  "materials/static/footnote.qmd": {
+    "footnote.html": "7ec8da2b"
+  },
+  "materials/static/sub-figure.qmd": {
+    "sub-figure.html": "adeb25d9"
+  },
+  "materials/static/title-slide.qmd": {
+    "title-slide.html": "e6ca70e0"
+  },
+  "materials/static/title-slide2.qmd": {
+    "title-slide2.html": "0d6c8ca4"
+  },
+  "materials/static/toc-1.qmd": {
+    "toc-1.html": "3ea479e3"
+  },
+  "materials/static/vertical-align.qmd": {
+    "vertical-align.html": "87e2bd4d"
+  },
+  "materials/test-layout.qmd": {
+    "test-layout.html": "b8768ecb"
+  },
+  "workshop-materials.qmd": {
+    "workshop-materials.html": "d97fa74a"
+  }
+}

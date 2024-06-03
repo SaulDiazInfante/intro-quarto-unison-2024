@@ -1,0 +1,15 @@
+{
+  "hash": "36f88f56490d25dc6c691f6838484131",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\nformat: html\ntitle: \"Workshop Materials\"\n---\n\n\nTo get access to the workshop materials, please clone the repo:\n\n<https://github.com/jthomasmock/quarto-workshop.git>\n\n\n\n\n## 01-intro\n\n|folder                      |file        |\n|:---------------------------|:-----------|\n|materials/workshop/01-intro |history.qmd |\n\n: {tbl-colwidths=\"[60,40]\"} \n\n## 02-authoring\n\n|folder                          |file                |\n|:-------------------------------|:-------------------|\n|materials/workshop/02-authoring |callout-boxes.qmd   |\n|materials/workshop/02-authoring |callout-pdf.qmd     |\n|materials/workshop/02-authoring |figure-layout-2.qmd |\n|materials/workshop/02-authoring |figure-layout.qmd   |\n|materials/workshop/02-authoring |markdown-syntax.qmd |\n\n: {tbl-colwidths=\"[60,40]\"} \n\n## 03-computation\n\n|folder                            |file                 |\n|:---------------------------------|:--------------------|\n|materials/workshop/03-computation |auto-complete.qmd    |\n|materials/workshop/03-computation |broken-notebook.qmd  |\n|materials/workshop/03-computation |inline-code.qmd      |\n|materials/workshop/03-computation |penguin-analysis.qmd |\n|materials/workshop/03-computation |visual-editor.qmd    |\n\n: {tbl-colwidths=\"[60,40]\"} \n\n## 04-static\n\n|folder                       |file                  |\n|:----------------------------|:---------------------|\n|materials/workshop/04-static |bootswatch-themed.qmd |\n|materials/workshop/04-static |penguin-report.qmd    |\n\n: {tbl-colwidths=\"[60,40]\"} \n\n## 05-presentations\n\n|folder                              |file                  |\n|:-----------------------------------|:---------------------|\n|materials/workshop/05-presentations |fragments.qmd         |\n|materials/workshop/05-presentations |revealjs-penguins.qmd |\n\n: {tbl-colwidths=\"[60,40]\"} \n\n## 07-visuals\n\n|folder                        |file                |\n|:-----------------------------|:-------------------|\n|materials/workshop/07-visuals |figure-layout-2.qmd |\n|materials/workshop/07-visuals |figure-layout.qmd   |\n|materials/workshop/07-visuals |gt-summary.qmd      |\n|materials/workshop/07-visuals |plot-layout.qmd     |\n|materials/workshop/07-visuals |plots.qmd           |\n|materials/workshop/07-visuals |stat-html.qmd       |\n\n: {tbl-colwidths=\"[60,40]\"} \n\n## 08-knitr\n\n|folder                      |file                   |\n|:---------------------------|:----------------------|\n|materials/workshop/08-knitr |fa-example.qmd         |\n|materials/workshop/08-knitr |lightbox-extension.qmd |\n|materials/workshop/08-knitr |penguin-params.qmd     |\n\n: {tbl-colwidths=\"[60,40]\"} \n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
