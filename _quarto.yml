@@ -2,15 +2,15 @@ project:
   type: website
   output-dir: docs
   render:
-    - "*.qmd"
-    - "!materials/workshop/"
+    - "index.qmd"
+#    - "!materials/workshop/"
 
 website:
   title: "Technical Writing with Quarto"
   twitter-card:
     card-style: summary_large_image
-    description: "rstudio::conf-2022 2 day workshop on getting started with Quarto"
-    image: "https://raw.githubusercontent.com/rstudio-conf-2022/get-started-quarto/main/preview.jpeg"
+    description: "rstudio::conf-2024 2 weeks workshop on getting started with Quarto"
+    image: Cover.jpeg
   page-footer:
     left: "This page was built with [Quarto](https://quarto.org/) based on the presentation of  [Tom Mock](https://themockup.blog)."
   navbar:
@@ -22,26 +22,26 @@ website:
         menu: 
           - href: materials/01-intro-quarto.qmd
             text: "Intro to Quarto"
-          - href: materials/02-authoring.qmd
-            text: "Authoring Quarto"
-          - href: materials/03-computation-editors.qmd
-            text: "Code and Editors"
-          - href: materials/04-static-documents.qmd
-            text: "Static Documents" 
-      - text: Day 2
-        menu: 
-          - href: materials/05-presentations.qmd
-            text: "Presentations"
-          - href: materials/06-websites.qmd
-            text: "Websites & Books"
-          - href: materials/07-plots-tables.qmd
-            text: "Plots & Tables"
-          - href: materials/08-advanced-knitr.qmd
-            text: "Advanced Quarto"
+          #- href: materials/02-authoring.qmd
+          #  text: "Authoring Quarto"
+          #- href: materials/03-computation-editors.qmd
+          #  text: "Code and Editors"
+          #- href: materials/04-static-documents.qmd
+          #  text: "Static Documents" 
+      #- text: Day 2
+      #  menu: 
+      #    - href: materials/05-presentations.qmd
+      #      text: "Presentations"
+      #    - href: materials/06-websites.qmd
+      #      text: "Websites & Books"
+      #    - href: materials/07-plots-tables.qmd
+      #      text: "Plots & Tables"
+      #    - href: materials/08-advanced-knitr.qmd
+      #      text: "Advanced Quarto"
       - href: schedule.qmd
         text: "Schedule"
-      - href: workshop-materials.qmd
-        text: Workshop
+      #- href: workshop-materials.qmd
+      #  text: Workshop
     right: 
       - href: "https://quarto.org/"
         text: "Quarto Docs"
@@ -53,25 +53,25 @@ website:
     style: docked
     contents: 
       - section: "Day 1"
-        contents: 
-          - href: materials/01-intro-quarto.qmd
-            text: "Intro to Quarto"
-          - href: materials/02-authoring.qmd
-            text: "Authoring Quarto"
-          - href: materials/03-computation-editors.qmd
-            text: "Code and Editors"
-          - href: materials/04-static-documents.qmd
-            text: "Static Documents"
-      - section: "Day 2"
-        contents:
-          - href: materials/05-presentations.qmd
-            text: "Presentations"
-          - href: materials/06-websites.qmd
-            text: "Websites & Books"
-          - href: materials/07-plots-tables.qmd
-            text: "Plots & Tables"
-          - href: materials/08-advanced-knitr.qmd
-            text: "Advanced Quarto"
+        #contents: 
+        #  - href: materials/01-intro-quarto.qmd
+        #    text: "Intro to Quarto"
+        #  - href: materials/02-authoring.qmd
+        #    text: "Authoring Quarto"
+        #  - href: materials/03-computation-editors.qmd
+        #    text: "Code and Editors"
+        #  - href: materials/04-static-documents.qmd
+        #    text: "Static Documents"
+      #- section: "Day 2"
+      #  contents:
+      #    - href: materials/05-presentations.qmd
+      #      text: "Presentations"
+      #    - href: materials/06-websites.qmd
+      #      text: "Websites & Books"
+      #    - href: materials/07-plots-tables.qmd
+      #      text: "Plots & Tables"
+      #    - href: materials/08-advanced-knitr.qmd
+      #      text: "Advanced Quarto"
 
 format:
   html:

@@ -1,0 +1,27 @@
+---
+title: "Schedule"
+---
+
+::: callout-note
+Depending on learner questions - the exact timing is subject to change.
+:::
+
+### Week 1
+
+| **Date**    | **Time**    | **Activity**                                                      |
+|-------------|-------------|-------------------------------------------------------------------|
+| Jun-17-2024 | 16:00-15:00 | [Understanding magic with Quarto](materials/01-intro-quarto.html) |
+| Jun-18-2024 | 16:00-15:00 | [Authoring with Markdown and more](materials/02-authoring.html)   |
+| Jun-19-2024 | 16:00-15:00 | [Authoring with Markdown and more](materials/02-authoring.html)   |
+| Jun-20-2024 | 16:00-15:00 | [Computation and Editors](materials/03-computation-editors.html)  |
+| Jun-21-2024 | 16:00-15:00 | [Computation and Editors](materials/03-computation-editors.html)  |
+
+### Week 2
+
+| **Date**    | **Time**    | **Activity**                                                       |
+|-------------|-------------|-------------------------------------------------------------------------|
+| Jun-24-2024 | 16:00-17:00 | [Presentations](materials/05-presentations.html)                        |
+| Jun-25-2024 | 16:00-17:00 | [Websites](materials/06-websites.html)                                  |
+| Jun-26-2024 | 16:00-17:00 | [Advanced plots, tables, and more](materials/07-plots-tables.html)      |
+| Jun-27-2020 | 16:00-17:00 | [Going further with Quarto + `knitr`](materials/08-advanced-knitr.html) |
+| Jun-28-2024 | 16:00-17:00 | [Going further with Quarto + `knitr`](materials/08-advanced-knitr.html) |
