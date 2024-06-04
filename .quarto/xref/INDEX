@@ -64,5 +64,8 @@
   },
   "workshop-materials.qmd": {
     "workshop-materials.html": "d97fa74a"
+  },
+  "01-intro-quarto.qmd": {
+    "01-intro-quarto.html": "757343b6"
   }
 }

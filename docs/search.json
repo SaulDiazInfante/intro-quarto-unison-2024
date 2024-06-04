@@ -1,0 +1,51 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Technical Writing with Quarto",
+    "section": "",
+    "text": "Tip\n\n\n\nIf you are a course attendee - please clone https://github.com/jthomasmock/quarto-workshop.git via RStudio on Monday morning (Jun 15th).\n\n\nPlease go to the workshop homepage for full instructions: https://rstudio-conf-2022.github.io/get-started-quarto/\n\n🗓 June 17, 2024\n⏰ 16:00-17:00\n✍️ rstd.io/get-started-quarto"
+  },
+  {
+    "objectID": "index.html#learning-objectives",
+    "href": "index.html#learning-objectives",
+    "title": "Technical Writing with Quarto",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\nUnderstand the difference between knitr, R Markdown, and Quarto\nUtilize RStudio, knitr, and Quarto to generate static documents, websites/blogs, and presentations\nExpand learner’s toolkit regarding markdown, CSS, and Quarto-native layout options\n\n\nThese materials are developed for a trainer-led workshop at rstudio::conf 2022, but should be useful for self-guided learning as well."
+  },
+  {
+    "objectID": "index.html#is-this-course-for-me",
+    "href": "index.html#is-this-course-for-me",
+    "title": "Technical Writing with Quarto",
+    "section": "Is this course for me?",
+    "text": "Is this course for me?\nThis two-day workshop is primarily intended as a broad overview of Quarto as the next generation of RMarkdown. You should take this workshop if you have experience programming in R and want to learn how to take advantage of Quarto for literate data science programming in academia, science, and industry.\nThis workshop will be appropriate for attendees who answer yes to these questions:\n\nHave you programmed in R and want to better encapsulate your code, documentation, and outputs in a cohesive “data product”?\nDo you want to learn about the next generation of RMarkdown for data science?\nDo you want to have a better interactive experience when writing technical or scientific documents with literate programming?"
+  },
+  {
+    "objectID": "index.html#prework",
+    "href": "index.html#prework",
+    "title": "Technical Writing with Quarto",
+    "section": "Prework",
+    "text": "Prework\nIf you are a workshop attendee and have any trouble with installation locally, please reach out to me directly!\n\nInstall latest version of RStudio, v2022.07.0-548 or later\nInstall latest version of Quarto (v1.0.36 or greater)\nAfter installing Quarto, open the terminal in RStudio:\n\nThe terminal is located in the tab next to the R console pane in RStudio\nInstall/Update TinyTeX for PDFs with quarto install tool tinytex\nInstall/Update Chromium with quarto install tool chromium\n\nIdeally upgrade/use to R 4.1 or R 4.2 (I’m showing base R pipe as |&gt;)\nInstall these R packages:\n\n\npkg_list &lt;- c(\n  \"tidyverse\", \"gt\", \"gtExtras\", \"reactable\", \"ggiraph\", \"here\", \"quarto\",\n  \"rmarkdown\", \"gtsummary\", \"palmerpenguins\", \"fs\", \"skimr\"\n  )\ninstall.packages(pkg_list)\n\n\n\n\n\n\n\nWorkshop Materials\n\n\n\nOn Monday morning July 25th - clone/pull this repo (to get latest version)! https://github.com/jthomasmock/quarto-workshop.git"
+  },
+  {
+    "objectID": "index.html#schedule",
+    "href": "index.html#schedule",
+    "title": "Technical Writing with Quarto",
+    "section": "Schedule",
+    "text": "Schedule\n\nWeek 1\n\n\n\nDate\nTime\nActivity\n\n\n\n\nJun-17-2024\n16:00-15:00\nUnderstanding magic with Quarto\n\n\nJun-18-2024\n16:00-15:00\nAuthoring with Markdown and more\n\n\nJun-19-2024\n16:00-15:00\nAuthoring with Markdown and more\n\n\nJun-20-2024\n16:00-15:00\nComputation and Editors\n\n\nJun-21-2024\n16:00-15:00\nComputation and Editors\n\n\n\n\n\nWeek 2\n\n\n\nDate\nTime\nActivity\n\n\n\n\nJun-24-2024\n16:00-17:00\nPresentations\n\n\nJun-25-2024\n16:00-17:00\nWebsites\n\n\nJun-26-2024\n16:00-17:00\nAdvanced plots, tables, and more\n\n\nJun-27-2020\n16:00-17:00\nGoing further with Quarto + knitr\n\n\nJun-28-2024\n16:00-17:00\nGoing further with Quarto + knitr"
+  },
+  {
+    "objectID": "index.html#instructor",
+    "href": "index.html#instructor",
+    "title": "Technical Writing with Quarto",
+    "section": "Instructor",
+    "text": "Instructor"
+  },
+  {
+    "objectID": "index.html#saul-diaz-infante-phd.",
+    "href": "index.html#saul-diaz-infante-phd.",
+    "title": "Technical Writing with Quarto",
+    "section": "Saul Diaz-Infante, PhD.",
+    "text": "Saul Diaz-Infante, PhD.\n This work is licensed under a Creative Commons Attribution 4.0 International License."
+  }
+]

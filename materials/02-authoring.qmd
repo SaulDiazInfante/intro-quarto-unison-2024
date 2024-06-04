@@ -8,7 +8,7 @@ format:
     logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
     footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
     css: ["theme/theme.css"]
-    theme: simple
+    theme: league
 editor: source
 execute: 
   echo: true
@@ -276,7 +276,7 @@ quarto_render("document.qmd", output_format = "pdf")
 ```{R}
 #| echo: false
 
-countdown_timer(2)
+countdown_timer(5)
 ```
 
 
@@ -410,7 +410,7 @@ inline image: ![Boston terrier](images/howard-gentleman.jpeg).
 You can embed [named hyperlinks](https://quarto.org/),
 direct urls like <https://quarto.org/>, and links to  [other places](#quarto-anatomy) in 
 the document. The syntax is similar for embedding an inline image:  
-![Boston terrier](images/howard-gentleman.jpeg){style="width:250px;"}
+![Boston terrier](images/fractal001.jpg){style="width:250px;"}
 :::
 :::
 
@@ -762,9 +762,10 @@ countdown_timer(3)
 
 Basic markdown syntax:
 
-    ![Boston Terrier](images/boston-terrier.png)
+    ![Fractal ](images/the_wave.jpg)
 
-![Boston Terrier](images/boston-terrier.png)
+![Fractal: Hokusai ](images/Hokusai40S.gif)
+
 
 ## Figures w/ code
 
@@ -773,22 +774,22 @@ Basic markdown syntax:
 #| fig-width: 4
 #| fig-align: right
 
-knitr::include_graphics("images/howard-gentleman.jpeg")
+knitr::include_graphics("images/attennea_fractal.png")
 ```
 
 ## Fragments/spans
 
 ::: columns
 ::: {.column width="50%"}
-    ![Boston terrier](images/boston-terrier.png){fig-align="left"}
+    ![Boston terrier](images/the_wave.png){fig-align="left"}
 
-![](images/boston-terrier.png)
+![](images/the_wave.png)
 :::
 
 ::: {.column width="50%"}
-    ![](images/boston-terrier.png){fig-align="right" fig-alt="A photo a Boston Terrier."}
+    ![](images/the_wave.png){fig-align="right" fig-alt="The Great Wave off the Coast of Kanagawa, Hokusai 1831."}
 
-![](images/boston-terrier.png){fig-align="right" fig-alt="A photo a Boston Terrier."}
+![](images/the_wave.png){fig-align="right" fig-alt="The Great Wave off the Coast of Kanagawa, Hokusai 1831."}
 :::
 :::
 
@@ -796,9 +797,9 @@ knitr::include_graphics("images/howard-gentleman.jpeg")
 
     ::: {#fig-bostons layout-ncol=2}
 
-    ![Excited](images/boston-terrier.png){#fig-boston width="250px"}
+    ![Excited](images/width="500px"){#fig-boston width="500px"}
 
-    ![Sleeping](images/boston-sleep.png){#fig-sleep width="250px"}
+    ![Sleeping](images/Hokusai40s.gif){#fig-sleep width="500px"}
 
     Two states of Howard
 
@@ -807,9 +808,10 @@ knitr::include_graphics("images/howard-gentleman.jpeg")
 ## Subfigures
 
 ::: {#fig-bostons layout-ncol="2"}
-![Excited](images/boston-terrier.png){#fig-boston width="250px"}
+![Excited](images/Hokusai52.gif){#fig-boston width="500px"}
 
-![Sleeping](images/boston-sleep.png){#fig-sleep width="250px"}
+![Sleeping](images/Hokusai40S.gif){#fig-sleep width="500px"}
+
 
 Two states of Howard
 :::
@@ -989,59 +991,55 @@ countdown_timer(5)
 
 ## Subfigures
 
-    ::: {#fig-bostons layout-nrow=2}
-
-    ![Excited](images/boston-terrier.png){#fig-boston width="250px"}
-
-    ![Sleeping](images/boston-sleep.png){#fig-sleep width="250px"}
-
-    ![Still Excited](images/boston-terrier.png){#fig-boston width="250px"}
-
-    ![Still sleeping](images/boston-sleep.png){#fig-sleep width="250px"}
-
+    ::: {#fig-fractals layout-nrow=2}
+      ![Fractal001](images/fractal001.jpg){#fig-fractal001 width="500px"}
+      ![Fractal002](images/fractal002.jpg){#fig-fractal002 width="500px"}
+      ![Fractal003](images/fractal003.jpg){#fig-fractal003 width="500px"}
+      ![Fractal004](images/fractal004.jpg){#fig-fractal004 width="500px"}
     :::
 
 ## Subfigures
 
 ::: {layout-nrow="2"}
-![Excited](images/boston-terrier.png){width="250px"}
 
-![Sleeping](images/boston-sleep.png){width="250px"}
+![Fractal001](images/fractal001.jpg){width="500px"}
 
-![Still Excited](images/boston-terrier.png){width="250px"}
+![Fractal002](images/fractal002.jpg){width="500px"}
 
-![Still sleeping](images/boston-sleep.png){width="250px"}
+![Fractal003](images/fractal003.jpg){width="500px"}
+
+![Fractal004](images/fractal004.jpg){width="500px"}
 :::
 
-Two states of Howard, twice
+Fractals in nature environments.
 
 ## Subfigures
 
     ::: {layout-ncol="2"}
-    ![Excited](images/boston-terrier.png){width="250px"}
+    ![Excited](images/Hokusai52.gif){width="500px"}
 
-    ![Sleeping](images/boston-sleep.png){width="250px"}
+    ![Sleeping](images/Hokusai40S.gif){width="500px"}
 
-    ![Still Excited](images/boston-terrier.png){width="250px"}
+    ![Still Excited](images/Hokusai52.gif){width="500px"}
 
-    ![Still sleeping](images/boston-sleep.png){width="250px"}
+    ![Still sleeping](images/Hokusai40S.gif){width="500px"}
 
     Two states of Howard, twice
     :::
 
 ::: {layout-ncol="2"}
-![Excited](images/boston-terrier.png){width="250px"}
+![Excited](images/fractal005.jpg){width="500px"}
 
-![Sleeping](images/boston-sleep.png){width="250px"}
+![Sleeping](images/fractal006.jpg){width="500px"}
 
-![Still Excited](images/boston-terrier.png){width="250px"}
+![Still Excited](images/fractal001.jpg){width="500px"}
 
-![Still sleeping](images/boston-sleep.png){width="250px"}
+![Still sleeping](images/fractal002.jpg){width="500px"}
 
 Two states of Howard, twice
 :::
 
-## Figure Divs
+## Figure Divs video
 
 Note that the last paragraph in the div block is used as the figure caption.
 
@@ -1052,8 +1050,8 @@ Note that the last paragraph in the div block is used as the figure caption.
 CERN
 :::
 ```
+::: {#fig-cern-youtube}
 
-::: {#fig-dog-youtube}
 {{<video https://www.youtube.com/embed/wo9vZccmqwc width="560" height="315">}}
 
 CERN
@@ -1063,18 +1061,17 @@ CERN
 ## Figure Divs
 
 ::: {layout-nrow="2"}
-![Excited](images/boston-terrier.png){width="250px"}
+![Excited](images/fractal003.jpg){width="500px"}
 
-![Sleeping](images/boston-sleep.png){width="250px"}
+![Sleeping](images/fractal004.jpg){width="500px"}
 
-![Still Excited](images/boston-terrier.png){width="250px"}
+![Still Excited](images/fractal005.jpg){width="500px"}
 
-::: {#fig-dog-embed}
+::: {#fig-cern-embed}
 
-{{<video https://www.youtube.com/embed/wo9vZccmqwc width="560" height="315">}}
+{{<video https://www.youtube.com/embed/wo9vZccmqwc width="560" height="309">}}
 Funny boston terrier videos
 :::
-
 
 
 ::: {#fig-cern}
@@ -1085,11 +1082,11 @@ The video "CERN: The Journey of Discovery"
 
 :::
 
-::: {#fig-elephant}
+::: {#fig-bulding-blog}
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/SNggmeilXDQ"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=CVcvXfRyfE0"></iframe>
 
-Elephant
+Bulding a Blog with Quarto
 :::
 
 
