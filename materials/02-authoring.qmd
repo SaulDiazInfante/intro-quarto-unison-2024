@@ -43,7 +43,7 @@ countdown_timer <- function(
 }
 ```
 
-## Quarto, anatomy
+## Quarto, anatomy {#quarto-anatomy}
 
 1.  Metadata: YAML
 
@@ -59,29 +59,32 @@ Add it all together, and you have beautiful, powerful, and useful outputs!
 library(tidyverse)
 ```
 
-
 ## Literate programming
 
-> Literate programming is writing out the program logic in a human language with included (separated by a primitive markup) code snippets and macros. - [Wikipedia](https://en.wikipedia.org/wiki/Literate_programming)
+> Literate programming is writing out the program logic in a human language with
+> included (separated by a primitive markup) code snippets and macros. -
+> [Wikipedia](https://en.wikipedia.org/wiki/Literate_programming)
 
-    ---
-    title: "ggplot2 demo"
-    date: "5/22/2021"
-    format: html
-    ---
+````         
+---
+title: "ggplot2 demo"
+date: "5/22/2021"
+format: html
+---
 
-    ## Air Quality
+## Air Quality
 
-    There is a relationship between temperature and the ozone level.
+There is a relationship between temperature and the ozone level.
 
-    ```{{r}}
-    #| label: fig-airquality
-    library(ggplot2)
-    ggplot(airquality, aes(Temp, Ozone)) + 
-      geom_point() + 
-      geom_smooth(method = "loess"
-    )
-    ```
+```{{r}}
+#| label: fig-airquality
+library(ggplot2)
+ggplot(airquality, aes(Temp, Ozone)) + 
+  geom_point() + 
+  geom_smooth(method = "loess"
+)
+```
+````
 
 . . .
 
@@ -208,7 +211,7 @@ To avoid manually typing out all the options, every time!
 
 . . .
 
-```bash
+``` bash
 quarto render document.qmd --to html
 ```
 
@@ -216,7 +219,7 @@ quarto render document.qmd --to html
 
 . . .
 
-```bash
+``` bash
 quarto render document.qmd --to html -M code-fold:true
 ```
 
@@ -224,7 +227,7 @@ quarto render document.qmd --to html -M code-fold:true
 
 . . .
 
-```bash
+``` bash
 quarto render document.qmd --to html -M code-fold:true -P alpha:0.2 -P ratio:0.3
 ```
 
@@ -232,19 +235,21 @@ quarto render document.qmd --to html -M code-fold:true -P alpha:0.2 -P ratio:0.3
 
 ## Quarto workflow
 
-Executing the Quarto Render button in RStudio will call Quarto render in a background job - this will prevent Quarto rendering from cluttering up the R console, and gives you and easy way to stop.
+Executing the Quarto Render button in RStudio will call Quarto render in a
+background job - this will prevent Quarto rendering from cluttering up the R
+console, and gives you and easy way to stop.
 
 ![](images/background-job.png)
 
 ## Rendering
 
-1. Render in RStudio, starts a background job and previews the output  
+1.  Render in RStudio, starts a background job and previews the output
 
 ![](https://quarto.org/docs/tools/images/rstudio-render.png)
 
 . . .
 
-2. System shell via `quarto render`
+2.  System shell via `quarto render`
 
 ```{bash}
 #| eval: false
@@ -254,11 +259,11 @@ quarto render document.qmd --to pdf
 quarto render document.qmd --to docx
 ```
 
-- Renders via terminal
+-   Renders via terminal
 
 . . .
 
-3. R console via `quarto` R package
+3.  R console via `quarto` R package
 
 ```{r}
 #| eval: false
@@ -270,8 +275,9 @@ quarto_render("document.qmd", output_format = "pdf")
 
 # `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
 
-- Open RStudio and `materials/workshop/visual-editor.qmd`
-- Compare behavior of rendering from RStudio > Render, using the CLI with `quarto render`, and in R console via `quarto::quarto_render()`
+-   Open RStudio and `materials/workshop/visual-editor.qmd`
+-   Compare behavior of rendering from RStudio \> Render, using the CLI with
+    `quarto render`, and in R console via `quarto::quarto_render()`
 
 ```{R}
 #| echo: false
@@ -279,11 +285,11 @@ quarto_render("document.qmd", output_format = "pdf")
 countdown_timer(5)
 ```
 
-
-
 ## Quarto linting
 
-> Lint, or a linter, is a static code analysis tool used to flag programming errors, bugs, stylistic errors and suspicious constructs. - [Lint](https://en.wikipedia.org/wiki/Lint_(software)#:~:text=Lint%2C%20or%20a%20linter%2C%20is,examined%20C%20language%20source%20code.)
+> Lint, or a linter, is a static code analysis tool used to flag programming
+> errors, bugs, stylistic errors and suspicious constructs. -
+> [Lint](https://en.wikipedia.org/wiki/Lint_(software)#:~:text=Lint%2C%20or%20a%20linter%2C%20is,examined%20C%20language%20source%20code.)
 
 . . .
 
@@ -299,7 +305,8 @@ countdown_timer(5)
 
 ## Quarto YAML Intelligence
 
-RStudio + VSCode provide rich tab-completion - start a word and tab to complete, or <kbd>`Ctrl + space`</kbd> to see all available options.
+RStudio + VSCode provide rich tab-completion - start a word and tab to complete,
+or <kbd>`Ctrl + space`</kbd> to see all available options.
 
 ![](images/quarto-tab-complete.png)
 
@@ -318,86 +325,113 @@ countdown_timer(2)
 
 [quarto.org/docs/reference/formats/html](https://quarto.org/docs/reference/formats/html.html)
 
-You can use the [HTML reference](https://quarto.org/docs/reference/formats/html.html) if needed.
+You can use the [HTML
+reference](https://quarto.org/docs/reference/formats/html.html) if needed.
 
 # Text & Markdown {background-color="#fa551c70"}
 
 ## Lists {.smaller}
 
-+-------------------------------------+---------------------------------+
-| Markdown Syntax                     | Output                          |
-+=====================================+=================================+
-|     * unordered list                | -   unordered list              |
-|         + sub-item 1                |                                 |
-|         + sub-item 2                |     -   sub-item 1              |
-|             - sub-sub-item 1        |                                 |
-|                                     |     -   sub-item 2              |
-|                                     |                                 |
-|                                     |         -   sub-sub-item 1      |
-+-------------------------------------+---------------------------------+
-|     *   item 2                      | -   item 2                      |
-|                                     |                                 |
-|         Continued (indent 4 spaces) |     Continued (indent 4 spaces) |
-+-------------------------------------+---------------------------------+
-|     1. ordered list                 | 1.  ordered list                |
-|     2. item 2                       |                                 |
-|         i) sub-item 1               | 2.  item 2                      |
-|              A.  sub-sub-item 1     |                                 |
-|                                     |     i.  sub-item 1              |
-|                                     |                                 |
-|                                     |         A.  sub-sub-item 1      |
-+-------------------------------------+---------------------------------+
-|     (@)  A list whose numbering     | 1.  A list whose numbering      |
-|                                     |                                 |
-|     continues after                 | continues after                 |
-|                                     |                                 |
-|     (@)  an interruption            | 2.  an interruption             |
-+-------------------------------------+---------------------------------+
-|     term                            | **term**                        |
-|     : definition                    |                                 |
-|                                     | :   definition                  |
-+-------------------------------------+---------------------------------+
++---------------------------------+---------------------------------+
+| Markdown Syntax                 | Output                          |
++=================================+=================================+
+| ```                             | -   unordered list              |
+| * unordered list                |                                 |
+|     + sub-item 1                |     -   sub-item 1              |
+|     + sub-item 2                |                                 |
+|         - sub-sub-item 1        |     -   sub-item 2              |
+| ```                             |                                 |
+|                                 |         -   sub-sub-item 1      |
++---------------------------------+---------------------------------+
+| ```                             | -   item 2                      |
+| *   item 2                      |                                 |
+|                                 |     Continued (indent 4 spaces) |
+|     Continued (indent 4 spaces) |                                 |
+| ```                             |                                 |
++---------------------------------+---------------------------------+
+| ```                             | 1.  ordered list                |
+| 1. ordered list                 |                                 |
+| 2. item 2                       | 2.  item 2                      |
+|     i) sub-item 1               |                                 |
+|          A.  sub-sub-item 1     |     i.  sub-item 1              |
+| ```                             |                                 |
+|                                 |         A.  sub-sub-item 1      |
++---------------------------------+---------------------------------+
+| ```                             | 1.  A list whose numbering      |
+| (@)  A list whose numbering     |                                 |
+|                                 | continues after                 |
+| continues after                 |                                 |
+|                                 | 2.  an interruption             |
+| (@)  an interruption            |                                 |
+| ```                             |                                 |
++---------------------------------+---------------------------------+
+| ```                             | **term**                        |
+| term                            |                                 |
+| : definition                    | :   definition                  |
+| ```                             |                                 |
++---------------------------------+---------------------------------+
 
 ## Text Formatting
 
-+-----------------------------------+-------------------------------+
-| Markdown Syntax                   | Output                        |
-+===================================+===============================+
-|     *italics* and **bold**        | *italics* and **bold**        |
-+-----------------------------------+-------------------------------+
-|     superscript^2^ / subscript~2~ | superscript^2^ / subscript~2~ |
-+-----------------------------------+-------------------------------+
-|     ~~strikethrough~~             | ~~strikethrough~~             |
-+-----------------------------------+-------------------------------+
-|     `verbatim code`               | `verbatim code`               |
-+-----------------------------------+-------------------------------+
++-------------------------------+-------------------------------+
+| Markdown Syntax               | Output                        |
++===============================+===============================+
+| ```                           | *italics* and **bold**        |
+| *italics* and **bold**        |                               |
+| ```                           |                               |
++-------------------------------+-------------------------------+
+| ```                           | superscript^2^ / subscript~2~ |
+| superscript^2^ / subscript~2~ |                               |
+| ```                           |                               |
++-------------------------------+-------------------------------+
+| ```                           | ~~strikethrough~~             |
+| ~~strikethrough~~             |                               |
+| ```                           |                               |
++-------------------------------+-------------------------------+
+| ```                           | `verbatim code`               |
+| `verbatim code`               |                               |
+| ```                           |                               |
++-------------------------------+-------------------------------+
 
 ## Headings
 
-+---------------------+-----------------+
-| Markdown Syntax     | Output          |
-+=====================+=================+
-|     # Header 1      | # Header 1      |
-+---------------------+-----------------+
-|     ## Header 2     | ## Header 2     |
-+---------------------+-----------------+
-|     ### Header 3    | ### Header 3    |
-+---------------------+-----------------+
-|     #### Header 4   | #### Header 4   |
-+---------------------+-----------------+
-|     ##### Header 5  | ##### Header 5  |
-+---------------------+-----------------+
-|     ###### Header 6 | ###### Header 6 |
-+---------------------+-----------------+
++-----------------+-----------------+
+| Markdown Syntax | Output          |
++=================+=================+
+| ```             | # Header 1      |
+| # Header 1      |                 |
+| ```             |                 |
++-----------------+-----------------+
+| ```             | ## Header 2     |
+| ## Header 2     |                 |
+| ```             |                 |
++-----------------+-----------------+
+| ```             | ### Header 3    |
+| ### Header 3    |                 |
+| ```             |                 |
++-----------------+-----------------+
+| ```             | #### Header 4   |
+| #### Header 4   |                 |
+| ```             |                 |
++-----------------+-----------------+
+| ```             | ##### Header 5  |
+| ##### Header 5  |                 |
+| ```             |                 |
++-----------------+-----------------+
+| ```             | ###### Header 6 |
+| ###### Header 6 |                 |
+| ```             |                 |
++-----------------+-----------------+
 
 ## Links
 
-- There are several types of "links" or hyperlinks.
+-   There are several types of "links" or hyperlinks.
 
 ::: columns
 ::: {.column width="50%"}
 #### Markdown
-```markdown
+
+``` markdown
 You can embed [named hyperlinks](https://quarto.org/),
 direct urls like <https://quarto.org/>, and links to 
 [other places](#quarto-anatomy) in 
@@ -405,11 +439,13 @@ the document. The syntax is similar for embedding an
 inline image: ![Boston terrier](images/howard-gentleman.jpeg).
 ```
 :::
-::: {.column width="50%" .fragment}
+
+::: {.column .fragment width="50%"}
 #### Output
-You can embed [named hyperlinks](https://quarto.org/),
-direct urls like <https://quarto.org/>, and links to  [other places](#quarto-anatomy) in 
-the document. The syntax is similar for embedding an inline image:  
+
+You can embed [named hyperlinks](https://quarto.org/), direct urls like
+<https://quarto.org/>, and links to [other places](#quarto-anatomy) in the
+document. The syntax is similar for embedding an inline image:\
 ![Boston terrier](images/fractal001.jpg){style="width:250px;"}
 :::
 :::
@@ -418,14 +454,16 @@ the document. The syntax is similar for embedding an inline image:
 
 ::: columns
 ::: {.column width="50%"}
-    | Right | Left | Default | Center |
-    |------:|:-----|---------|:------:|
-    |   12  |  12  |    12   |    12  |
-    |  123  |  123 |   123   |   123  |
-    |    1  |    1 |     1   |     1  |
+```         
+| Right | Left | Default | Center |
+|------:|:-----|---------|:------:|
+|   12  |  12  |    12   |    12  |
+|  123  |  123 |   123   |   123  |
+|    1  |    1 |     1   |     1  |
+```
 :::
 
-::: {.column width="50%" .fragment}
+::: {.column .fragment width="50%"}
 | Right | Left | Default | Center |
 |------:|:-----|---------|:------:|
 |    12 | 12   | 12      |   12   |
@@ -446,78 +484,93 @@ countdown_timer(3)
 
 ## Grid tables
 
-    +---------------+---------------+--------------------+
-    | Fruit         | Price         | Advantages         |
-    +===============+===============+====================+
-    | Bananas       | $1.34         | - built-in wrapper |
-    |               |               | - bright color     |
-    +---------------+---------------+--------------------+
-    | Oranges       | $2.10         | - cures scurvy     |
-    |               |               | - tasty            |
-    +---------------+---------------+--------------------+
+```         
++---------------+---------------+--------------------+
+| Fruit         | Price         | Advantages         |
++===============+===============+====================+
+| Bananas       | $1.34         | - built-in wrapper |
+|               |               | - bright color     |
++---------------+---------------+--------------------+
+| Oranges       | $2.10         | - cures scurvy     |
+|               |               | - tasty            |
++---------------+---------------+--------------------+
 
-    : Sample grid table.
+: Sample grid table.
+```
 
-+---------------+---------------+----------------------+
-| Fruit         | Price         | Advantages           |
-+===============+===============+======================+
-| Bananas       | \$1.34        | -   built-in wrapper |
-|               |               | -   bright color     |
-+---------------+---------------+----------------------+
-| Oranges       | \$2.10        | -   cures scurvy     |
-|               |               | -   tasty            |
-+---------------+---------------+----------------------+
++---------+--------+----------------------+
+| Fruit   | Price  | Advantages           |
++=========+========+======================+
+| Bananas | \$1.34 | -   built-in wrapper |
+|         |        | -   bright color     |
++---------+--------+----------------------+
+| Oranges | \$2.10 | -   cures scurvy     |
+|         |        | -   tasty            |
++---------+--------+----------------------+
 
 : Sample grid table.
 
 ## Grid table, alignment
 
-Alignments can be specified as with pipe tables, by putting colons at the boundaries of the separator line after the header:
+Alignments can be specified as with pipe tables, by putting colons at the
+boundaries of the separator line after the header:
 
-    +---------------+---------------+--------------------+
-    | Right         | Left          | Centered           |
-    +==============:+:==============+:==================:+
-    | Bananas       | $1.34         | built-in wrapper   |
-    +---------------+---------------+--------------------+
+```         
++---------------+---------------+--------------------+
+| Right         | Left          | Centered           |
++==============:+:==============+:==================:+
+| Bananas       | $1.34         | built-in wrapper   |
++---------------+---------------+--------------------+
+```
 
 For headerless tables, the colons go on the top line instead:
 
-    +--------------:+:--------------+:------------------:+
-    | Right         | Left          | Centered           |
-    +---------------+---------------+--------------------+
+```         
++--------------:+:--------------+:------------------:+
+| Right         | Left          | Centered           |
++---------------+---------------+--------------------+
+```
 
-Note that grid tables are quite awkward to write with a plain text editor (because unlike pipe tables, the column indicators must align). The RStudio IDE's Quarto Visual Editor can assist in making these tables.
+Note that grid tables are quite awkward to write with a plain text editor
+(because unlike pipe tables, the column indicators must align). The RStudio
+IDE's Quarto Visual Editor can assist in making these tables.
 
 ## Tables from code
 
 `knitr` itself can turn R dataframes into tables with `knitr::kable()`
 
-> A very simple table generator, and it is simple by design. It is not intended to replace any other R packages for making tables. . . .
+> A very simple table generator, and it is simple by design. It is not intended
+> to replace any other R packages for making tables. . . .
 
 ```{r}
 head(mtcars) |> 
   knitr::kable()
 ```
 
-
 ## Quotes
 
-> Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do. - Donald Knuth, Literate Programming ^["Literate Programming", The Computer Journal 27 (1984), p. 97. (Reprinted in Literate Programming, 1992, p. 99.) Literate Programming (1984)]
+> Let us change our traditional attitude to the construction of programs:
+> Instead of imagining that our main task is to instruct a computer what to do,
+> let us concentrate rather on explaining to human beings what we want a
+> computer to do. - Donald Knuth, Literate Programming [^1]
+
+[^1]: "Literate Programming", The Computer Journal 27 (1984), p. 97. (Reprinted
+    in Literate Programming, 1992, p. 99.) Literate Programming (1984)
 
 . . .
 
-```markdown
+``` markdown
 > Let us change our traditional attitude to the construction of programs: Instead of imagining that our main task is to instruct a computer what to do, let us concentrate rather on explaining to human beings what we want a computer to do. - Donald Knuth, Literate Programming
 ```
 
 . . .
 
-> I like dogs  
+> I like dogs\
 > And I like cats
 
 . . .
 
-```markdown
+``` markdown
 > I like dogs
 > And I like cats
 ```
@@ -526,11 +579,9 @@ head(mtcars) |>
 
 ## Anatomy of a code chunk
 
-:::: {.columns}
-
+::: columns
 ::: {.column width="50%"}
-
-````md
+```` md
 ```{{r}}
 #| label: car-stuff
 #| echo: false
@@ -538,18 +589,14 @@ mtcars %>%
   distinct(cyl)
 ```
 ````
-
 :::
 
-::: {.column width="50%" .fragment}
-
-- Has 3x backticks on each end ```` ``` ````  
-- Indicate engine (`r`) between curly braces `{r}`  
-- Place options underneath, behind the `#|` (hashpipe): `#| option1: value`  
-
+::: {.column .fragment width="50%"}
+-   Has 3x backticks on each end ```` ``` ````\
+-   Indicate engine (`r`) between curly braces `{r}`\
+-   Place options underneath, behind the `#|` (hashpipe): `#| option1: value`
 :::
-
-::::
+:::
 
 ## Code
 
@@ -561,21 +608,26 @@ In a teaching scenario like today, I *really* want to display code
 
 . . .
 
-In a business, you may want to have a data-science facing output which displays the source code AND a stakeholder-facing output which hides the code
+In a business, you may want to have a data-science facing output which displays
+the source code AND a stakeholder-facing output which hides the code
 
 ## Code
 
-If you simply want code highlighting, you can use 3x backticks + the language ```` ```r ````
+If you simply want code highlighting, you can use 3x backticks + the language
+```` ```r ````
 
 . . .
 
-    ```r
-    head(mtcars)
-    ```
+````         
+```r
+head(mtcars)
+```
+````
 
 . . .
 
-<br> Which returns the below but is not executed since there aren't `{}` around the language:
+<br> Which returns the below but is not executed since there aren't `{}` around
+the language:
 
 ``` r
 head(mtcars)
@@ -583,12 +635,14 @@ head(mtcars)
 
 . . .
 
-If you instead want to see source code and evaluate it, you could use `echo: true` where `echo: false` would instead hide the code but still evaluate it.
+If you instead want to see source code and evaluate it, you could use
+`echo: true` where `echo: false` would instead hide the code but still evaluate
+it.
 
-    ```{{r}}
-    #| echo: true
-    1 + 1
-    ```
+```{{{r}}}
+#| echo: true
+1 + 1
+```
 
 <br>
 
@@ -601,14 +655,16 @@ If you instead want to see source code and evaluate it, you could use `echo: tru
 
 ## Code
 
-In some scenarios you want to both execute the code and return the FULL code including backticks, like today where I'm teaching! `echo: fenced` is a great option for this.
+In some scenarios you want to both execute the code and return the FULL code
+including backticks, like today where I'm teaching! `echo: fenced` is a great
+option for this.
 
 . . .
 
-    ```{{r}}
-    #| echo: fenced
-    1 + 1
-    ```
+```{{{r}}}
+#| echo: fenced
+1 + 1
+```
 
 . . .
 
@@ -623,33 +679,40 @@ In some scenarios you want to both execute the code and return the FULL code inc
 
 If you want to, you may return purely decorative code which is not executed
 
-    ````
-    ```{{{r}}}
-    1 + 1
-    ```
-    ````
+`````         
+````
+```{{{r}}}
+1 + 1
+```
+````
+`````
 
 . . .
 
 Rendered as the below and not evaluated:
 
-    ```{{r}}
-    1 + 1
-    ```
+```{{{r}}}
+1 + 1
+```
 
 . . .
 
-The general rule here is that if you want to return code verbatim, you need to have at least N + 1 on the backticks. So for a normal 3x backtick chunk... you'll need?
+The general rule here is that if you want to return code verbatim, you need to
+have at least N + 1 on the backticks. So for a normal 3x backtick chunk...
+you'll need?
 
 ## Divs and Spans
 
-Pandoc and therefore Quarto can parse ["fenced `Div` blocks"](https://pandoc.org/MANUAL.html#divs-and-spans)
+Pandoc and therefore Quarto can parse ["fenced `Div`
+blocks"](https://pandoc.org/MANUAL.html#divs-and-spans)
 
 . . .
 
-    ::: {.border}
-    This content can be styled with a border
-    :::
+```         
+::: {.border}
+This content can be styled with a border
+:::
+```
 
 . . .
 
@@ -657,7 +720,9 @@ Pandoc and therefore Quarto can parse ["fenced `Div` blocks"](https://pandoc.org
 This content can be styled with a border
 :::
 
-    This is text with [special]{style="color:red;"} formatting.
+```         
+This is text with [special]{style="color:red;"} formatting.
+```
 
 . . .
 
@@ -665,12 +730,16 @@ This is text with [special]{style="color:red;"} formatting.
 
 . . .
 
-You're not limited to HTML/CSS concepts - Pandoc and Quarto also have "attributes" that can be assigned in this way.
+You're not limited to HTML/CSS concepts - Pandoc and Quarto also have
+"attributes" that can be assigned in this way.
 
 ### Divs and Spans
 
--   You can think of a `:::` div as a HTML `<div>` but it can also apply in specific situations to content in PDF
--   Similarly, `[text]{.class}` spans can be thought of a `<span .class>Text</span>` but again are a bit more transferable if using Pandoc/Quarto native attributes.
+-   You can think of a `:::` div as a HTML `<div>` but it can also apply in
+    specific situations to content in PDF
+-   Similarly, `[text]{.class}` spans can be thought of a
+    `<span .class>Text</span>` but again are a bit more transferable if using
+    Pandoc/Quarto native attributes.
 
 . . .
 
@@ -692,21 +761,25 @@ While the following is hard-coded as HTML.
 
 ## Callout Blocks
 
-    :::{.callout-note}
-    Note that there are five types of callouts, including: 
-    `note`, `tip`, `warning`, `caution`, and `important`.
-    :::
+```         
+:::{.callout-note}
+Note that there are five types of callouts, including: 
+`note`, `tip`, `warning`, `caution`, and `important`.
+:::
+```
 
 ::: callout-note
 ## Note
 
-Note that there are five types of callouts, including: `note`, `tip`, `warning`, `caution`, and `important`.
+Note that there are five types of callouts, including: `note`, `tip`, `warning`,
+`caution`, and `important`.
 :::
 
 ::: callout-warning
 ## Warning
 
-Callouts provide a simple way to attract attention, for example, to this warning.
+Callouts provide a simple way to attract attention, for example, to this
+warning.
 :::
 
 ::: callout-important
@@ -727,30 +800,35 @@ Here is something under construction
 
 ## Callout markdown syntax
 
-    :::{.callout-note}
-    Note that there are five types of callouts, including:
-    `note`, `warning`, `important`, `tip`, and `caution`.
-    :::
+```         
+:::{.callout-note}
+Note that there are five types of callouts, including:
+`note`, `warning`, `important`, `tip`, and `caution`.
+:::
 
 
-    :::{.callout-tip}
-    ## Tip With Caption
+:::{.callout-tip}
+## Tip With Caption
 
-    This is an example of a callout with a caption.
-    :::
+This is an example of a callout with a caption.
+:::
+```
 
 <br> <br>
 
-    :::{.callout-caution collapse="true"}
-    ## Expand To Learn About Collapse
+```         
+:::{.callout-caution collapse="true"}
+## Expand To Learn About Collapse
 
-    This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
-    :::
+This is an example of a 'folded' caution callout that can be expanded by the user. You can use `collapse="true"` to collapse it by default or `collapse="false"` to make a collapsible callout that is expanded by default.
+:::
+```
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
 -   Open `materials/workshop/02-authoring/callout-boxes.qmd`
--   Try changing the types of callouts/remove them from code boxes and then render
+-   Try changing the types of callouts/remove them from code boxes and then
+    render
 -   Open `materials/workshop/02-authoring/callout-pdf.qmd` and render it as well
 
 ```{R}
@@ -762,10 +840,11 @@ countdown_timer(3)
 
 Basic markdown syntax:
 
-    ![Fractal ](images/the_wave.jpg)
+```         
+![Fractal ](images/the_wave.jpg)
+```
 
-![Fractal: Hokusai ](images/Hokusai40S.gif)
-
+![Fractal: Hokusai](images/Hokusai40S.gif)
 
 ## Figures w/ code
 
@@ -781,29 +860,36 @@ knitr::include_graphics("images/attennea_fractal.png")
 
 ::: columns
 ::: {.column width="50%"}
-    ![Boston terrier](images/the_wave.png){fig-align="left"}
+```         
+![The wave](images/the_wave.png){fig-align="left"}
+```
 
 ![](images/the_wave.png)
 :::
 
 ::: {.column width="50%"}
-    ![](images/the_wave.png){fig-align="right" fig-alt="The Great Wave off the Coast of Kanagawa, Hokusai 1831."}
-
+```         
 ![](images/the_wave.png){fig-align="right" fig-alt="The Great Wave off the Coast of Kanagawa, Hokusai 1831."}
+```
+
+![](images/the_wave.png){fig-align="right"
+fig-alt="The Great Wave off the Coast of Kanagawa, Hokusai 1831."}
 :::
 :::
 
 ## Subfigures fenced div class
 
-    ::: {#fig-bostons layout-ncol=2}
+```         
+::: {#fig-bostons layout-ncol=2}
 
-    ![Excited](images/width="500px"){#fig-boston width="500px"}
+![Excited](images/width="500px"){#fig-boston width="500px"}
 
-    ![Sleeping](images/Hokusai40s.gif){#fig-sleep width="500px"}
+![Sleeping](images/Hokusai40s.gif){#fig-sleep width="500px"}
 
-    Two states of Howard
+Two states of Howard
 
-    :::
+:::
+```
 
 ## Subfigures
 
@@ -811,7 +897,6 @@ knitr::include_graphics("images/attennea_fractal.png")
 ![Excited](images/Hokusai52.gif){#fig-boston width="500px"}
 
 ![Sleeping](images/Hokusai40S.gif){#fig-sleep width="500px"}
-
 
 Two states of Howard
 :::
@@ -842,14 +927,15 @@ This specific slide-deck is at `"get-started-quarto/materials/02-authoring.qmd"`
 
 How to reference a image/file in parent directory i.e. `"materials/`?
 
-
 ## Absolute vs Relative:
 
-In places like markdown, YAML, or the command line/shell/terminal you'll need to use absolute or relative file paths:
+In places like markdown, YAML, or the command line/shell/terminal you'll need to
+use absolute or relative file paths:
 
 . . .
 
-Absolute = BAD: `"/Users/thomasmock/get-started-quarto"` - who's computer will this work on?
+Absolute = BAD: `"/Users/thomasmock/get-started-quarto"` - who's computer will
+this work on?
 
 ```{r}
 list.files("/Users/thomasmock/get-started-quarto")
@@ -857,9 +943,10 @@ list.files("/Users/thomasmock/get-started-quarto")
 
 ## Relative file paths
 
-Better, HTML style relative paths: `"../` = up one directory - `../../` = up two directories and so forth 
+Better, HTML style relative paths: `"../` = up one directory - `../../` = up two
+directories and so forth
 
-- `/..` or `/` = start from `root` directory of your current computer
+-   `/..` or `/` = start from `root` directory of your current computer
 
 ```{r}
 list.files("../")
@@ -867,7 +954,8 @@ list.files("../")
 
 . . .
 
-`"~/get-started-quarto/"` where "\~" is a shortcut for your home directory (like `thomasmock` on my computer)
+`"~/get-started-quarto/"` where "\~" is a shortcut for your home directory (like
+`thomasmock` on my computer)
 
 ```{r}
 list.files("~/get-started-quarto/")
@@ -889,12 +977,12 @@ Working right to left (child to parent)
 list.files("../materials")
 ```
 
-
 ## Referencing paths in R code
 
 In code you can use `here::here()`:
 
-> The goal of the `here` package is to enable easy file referencing in project-oriented workflows
+> The goal of the `here` package is to enable easy file referencing in
+> project-oriented workflows
 
 ```{r}
 list.files(here::here())
@@ -914,7 +1002,6 @@ here::here()
 list.files(here::here())
 ```
 
-
 ## `here::here()`
 
 ```{r}
@@ -931,7 +1018,6 @@ fs::file_info(here::here("preview.jpeg")) |>  select(1:3)
 
 <br>
 
-
 ```{r}
 fs::file_info(here::here("materials/images/howard-gentleman.jpeg")) |>  select(1:3)
 ```
@@ -944,29 +1030,24 @@ fs::file_info(here::here("materials", "images", "howard-gentleman.jpeg")) |>  se
 
 ```
 
-
-
 ## Navigating in the terminal
 
-Because Quarto is a command line interface (CLI), there are times you'll need to use it via the terminal. A great overview of using the command line and navigating files/directories is available via the [Data Carpentries](https://datacarpentry.org/shell-genomics/02-the-filesystem/index.html) or a great interactive tool for understanding commands: <https://tldr.ostera.io>
+Because Quarto is a command line interface (CLI), there are times you'll need to
+use it via the terminal. A great overview of using the command line and
+navigating files/directories is available via the [Data
+Carpentries](https://datacarpentry.org/shell-genomics/02-the-filesystem/index.html)
+or a great interactive tool for understanding commands: <https://tldr.ostera.io>
 
 . . .
 
-+------------------------------------+-------------------------------------------------------+
 | Command                            | Action                                                |
-+====================================+=======================================================+
+|------------------------------------|-------------------------------------------------------|
 | `pwd`                              | Print name of current working directory               |
-+------------------------------------+-------------------------------------------------------+
 | `cd`                               | Change current working directory                      |
-+------------------------------------+-------------------------------------------------------+
 | `ls`                               | List directory contents                               |
-+------------------------------------+-------------------------------------------------------+
 | `quarto --help`                    | Return `quarto` help docs                             |
-+------------------------------------+-------------------------------------------------------+
 | `mkdir howdy`                      | Make a new folder/directory called "howdy"            |
-+------------------------------------+-------------------------------------------------------+
 | `rm howdy/some-file.qmd` \| Remove | a file called `some-file.qmd` from the "howdy" folder |
-+------------------------------------+-------------------------------------------------------+
 
 # `r fontawesome::fa("laptop-code", "white")` Our Turn {background-color="#447099" transition="slide-in"}
 
@@ -991,17 +1072,18 @@ countdown_timer(5)
 
 ## Subfigures
 
-    ::: {#fig-fractals layout-nrow=2}
-      ![Fractal001](images/fractal001.jpg){#fig-fractal001 width="500px"}
-      ![Fractal002](images/fractal002.jpg){#fig-fractal002 width="500px"}
-      ![Fractal003](images/fractal003.jpg){#fig-fractal003 width="500px"}
-      ![Fractal004](images/fractal004.jpg){#fig-fractal004 width="500px"}
-    :::
+```         
+::: {#fig-fractals layout-nrow=2}
+  ![Fractal001](images/fractal001.jpg){#fig-fractal001 width="500px"}
+  ![Fractal002](images/fractal002.jpg){#fig-fractal002 width="500px"}
+  ![Fractal003](images/fractal003.jpg){#fig-fractal003 width="500px"}
+  ![Fractal004](images/fractal004.jpg){#fig-fractal004 width="500px"}
+:::
+```
 
 ## Subfigures
 
 ::: {layout-nrow="2"}
-
 ![Fractal001](images/fractal001.jpg){width="500px"}
 
 ![Fractal002](images/fractal002.jpg){width="500px"}
@@ -1015,17 +1097,19 @@ Fractals in nature environments.
 
 ## Subfigures
 
-    ::: {layout-ncol="2"}
-    ![Excited](images/Hokusai52.gif){width="500px"}
+```         
+::: {layout-ncol="2"}
+![Excited](images/Hokusai52.gif){width="500px"}
 
-    ![Sleeping](images/Hokusai40S.gif){width="500px"}
+![Sleeping](images/Hokusai40S.gif){width="500px"}
 
-    ![Still Excited](images/Hokusai52.gif){width="500px"}
+![Still Excited](images/Hokusai52.gif){width="500px"}
 
-    ![Still sleeping](images/Hokusai40S.gif){width="500px"}
+![Still sleeping](images/Hokusai40S.gif){width="500px"}
 
-    Two states of Howard, twice
-    :::
+Two states of Howard, twice
+:::
+```
 
 ::: {layout-ncol="2"}
 ![Excited](images/fractal005.jpg){width="500px"}
@@ -1050,12 +1134,11 @@ Note that the last paragraph in the div block is used as the figure caption.
 CERN
 :::
 ```
-::: {#fig-cern-youtube}
 
-{{<video https://www.youtube.com/embed/wo9vZccmqwc width="560" height="315">}}
+::: {#fig-cern-youtube}
+{{\<video https://www.youtube.com/embed/wo9vZccmqwc width="560" height="315"\>}}
 
 CERN
-
 :::
 
 ## Figure Divs
@@ -1068,29 +1151,23 @@ CERN
 ![Still Excited](images/fractal005.jpg){width="500px"}
 
 ::: {#fig-cern-embed}
-
-{{<video https://www.youtube.com/embed/wo9vZccmqwc width="560" height="309">}}
+{{\<video https://www.youtube.com/embed/wo9vZccmqwc width="560" height="309"\>}}
 Funny boston terrier videos
 :::
 
-
 ::: {#fig-cern}
-
 {{< video https://www.youtube.com/embed/wo9vZccmqwc >}}
 
 The video "CERN: The Journey of Discovery"
-
 :::
 
 ::: {#fig-bulding-blog}
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=CVcvXfRyfE0">
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=CVcvXfRyfE0"></iframe>
+</iframe>
 
 Bulding a Blog with Quarto
 :::
-
-
-
 :::
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
@@ -1103,9 +1180,7 @@ Bulding a Blog with Quarto
 countdown_timer(3)
 ```
 
-
 In @fig-cern...
-
 
 ## Footnotes
 
@@ -1113,17 +1188,20 @@ Pandoc supports numbering and formatting footnotes.
 
 ## Inline footnotes
 
-    Here is an inline note.^[Inlines notes are easier to write,
-    since you don't have to pick an identifier and move down to
-    type the note.]
-
+```         
 Here is an inline note.^[Inlines notes are easier to write,
 since you don't have to pick an identifier and move down to
 type the note.]
+```
+
+Here is an inline note.[^2]
+
+[^2]: Inlines notes are easier to write, since you don't have to pick an
+    identifier and move down to type the note.
 
 ## Inline footnotes
 
-```
+```         
 Here is an footnore reference[^1]
 
 [^1]: This can be easy in some situations when you have a really long note or
@@ -1132,26 +1210,36 @@ don't want to inline complex outputs.
 
 . . .
 
-Here is an footnore reference[^1]
+Here is an footnore reference[^3]
 
-[^1]: This can be easy in some situations when you have a really long note or
-don't want to inline complex outputs.
+[^3]: This can be easy in some situations when you have a really long note or
+    don't want to inline complex outputs.
 
 . . .
 
-Notice in both situations that the footnote is placed at the bottom of the page in presentations, whereas in a document it would be hoverable or at the end of the document.
+Notice in both situations that the footnote is placed at the bottom of the page
+in presentations, whereas in a document it would be hoverable or at the end of
+the document.
 
 ## Cross References
 
-Cross-references make it easier for readers to navigate your document by providing numbered references and hyperlinks to various entities like figures and tables.
+Cross-references make it easier for readers to navigate your document by
+providing numbered references and hyperlinks to various entities like figures
+and tables.
 
-    ![Elephant](elephant.png){#fig-elephant}
+```         
+![Elephant](elephant.png){#fig-elephant}
+```
 
 . . .
 
-The presence of the caption (`Elephant`) and label (`#fig-elephant`) make this figure referenceable. This enables you to use the following syntax to refer to it elsewhere in the document:
+The presence of the caption (`Elephant`) and label (`#fig-elephant`) make this
+figure referenceable. This enables you to use the following syntax to refer to
+it elsewhere in the document:
 
-    See @fig-elephant for an illustration.
+```         
+See @fig-elephant for an illustration.
+```
 
 . . .
 
@@ -1159,18 +1247,18 @@ The presence of the caption (`Elephant`) and label (`#fig-elephant`) make this f
 
 ## Diagrams w/ `mermaid`
 
-````
-```{{mermaid}}
+```{{{mermaid}}}
 flowchart LR
   A[Hard edge] --> B(Round edge)
   B --> C{Decision}
   C --> D[Result one]
   C --> E[Result two]
 ```
-````
 
 ![](images/mermaid.jpeg)
 
 . . .
 
-[Mermaid example](https://mermaid.live/edit#pako:eNqVVFFvmzAQ_iuWo0ybBBWpRDbQFKkJSV86qUofSx8MPoIbYzNjllUk_72A44RFndqChM7ffff5fHemwamkgEO8UaTM0d06FuMxSjmpqgiyWFjLQHNeA0ollypEI98nfjZ1MsZ5OMom3etUWsktuDtGdR5el3-PQHgiS6HdHbBNrsNEcnq5wRroSZ9k3tQPjvrggQ_J__UN-VLu11ktDaaTwP9gtpb8Trb3RFCZnrbwgh9e4n0wYUO-VFwxbgs8mnz3_QDeytiW863o68-ExwK1z83XjIQZcVsquN04oKvfBf2G3Ct3huZNY7y9YyuYVl9EUpX953AwCnPDXQyEUKtgnAvjjJqmNPXaMZ3_TNTsriaopWpQlRWKkOvO9mgNpVR6j5aPg8xKmjnovB7a7k4q-jSUuFdQgdBEMyn2aPWo4A8Q_lz9E1XKHahSMqHRRbB8hlRXe3R7TGDDZdLWsrcTKbeoP_5TV8Hx-EG_cOjMvgno5nxXLDQ_TbdFFnZALRANR8qCS2d17qwFbwfNxg4uQBWE0fYKN90ZYqxzKCDGYWtSyEjNdYxjcWipdUmJhiVlWiocalWDg0mt5cOLSO3acCJG2h9CYcDDK9A0Zlk) and [Mermaid.js documentation](https://mermaid-js.github.io/mermaid/#/flowchart)
+[Mermaid
+example](https://mermaid.live/edit#pako:eNqVVFFvmzAQ_iuWo0ybBBWpRDbQFKkJSV86qUofSx8MPoIbYzNjllUk_72A44RFndqChM7ffff5fHemwamkgEO8UaTM0d06FuMxSjmpqgiyWFjLQHNeA0ollypEI98nfjZ1MsZ5OMom3etUWsktuDtGdR5el3-PQHgiS6HdHbBNrsNEcnq5wRroSZ9k3tQPjvrggQ_J__UN-VLu11ktDaaTwP9gtpb8Trb3RFCZnrbwgh9e4n0wYUO-VFwxbgs8mnz3_QDeytiW863o68-ExwK1z83XjIQZcVsquN04oKvfBf2G3Ct3huZNY7y9YyuYVl9EUpX953AwCnPDXQyEUKtgnAvjjJqmNPXaMZ3_TNTsriaopWpQlRWKkOvO9mgNpVR6j5aPg8xKmjnovB7a7k4q-jSUuFdQgdBEMyn2aPWo4A8Q_lz9E1XKHahSMqHRRbB8hlRXe3R7TGDDZdLWsrcTKbeoP_5TV8Hx-EG_cOjMvgno5nxXLDQ_TbdFFnZALRANR8qCS2d17qwFbwfNxg4uQBWE0fYKN90ZYqxzKCDGYWtSyEjNdYxjcWipdUmJhiVlWiocalWDg0mt5cOLSO3acCJG2h9CYcDDK9A0Zlk)
+and [Mermaid.js documentation](https://mermaid-js.github.io/mermaid/#/flowchart)

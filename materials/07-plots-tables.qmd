@@ -7,10 +7,12 @@ format:
     logo: "https://www.rstudio.com/wp-content/uploads/2018/10/RStudio-Logo-Flat.png"
     footer: "[Get started with Quarto](https://rstudio-conf-2022.github.io/get-started-quarto/)"
     css: ["theme/theme.css"]
-    theme: simple
-    echo: true
+    theme: league
 editor: source
----
+execute: 
+  echo: true
+---    
+
 
 # 07 - Plots, Graphics, and tables {background-color="#4f6952" background-image="images/outdoor-patio.jpg" background-size="cover"}
 
@@ -112,6 +114,7 @@ Row 2: one image, taking up the entire column
 ::: {.column width="50%"}
 ![](images/custom-layout-equal.png)
 :::
+
 :::
 
 ## Custom Layouts
@@ -492,7 +495,7 @@ mass_flipper
 
 ## Interactivity
 
-Quarto supports JupyterWidgets (with Jupyter) or `htmlwidgets` in R/knitr
+Quarto supports Jupyter Widgets (with Jupyter) or `htmlwidgets` in R/knitr
 
 ```{r}
 library(leaflet)
@@ -792,6 +795,6 @@ minimal_table <- gt(party_df) %>%
 
 # `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
 
--   Open `materials/workshop/07-static/gt-summary.qmd`
--   Open `materials/workshop/07-static/stat-html.qmd`
+-   Open `materials/workshop/07-visuals/gt-summary.qmd`
+-   Open `materials/workshop/07-visuals/stat-html.qmd`
 -   Explore and render

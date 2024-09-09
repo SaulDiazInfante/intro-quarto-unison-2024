@@ -2,8 +2,8 @@ project:
   type: website
   output-dir: docs
   render:
-    - "index.qmd"
-#    - "!materials/workshop/"
+    - "*.qmd"
+    - "materials/workshop/01-intro"
 
 website:
   title: "Technical Writing with Quarto"
@@ -18,60 +18,60 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - text: Day 1
+      - text: Week 01
         menu: 
           - href: materials/01-intro-quarto.qmd
             text: "Intro to Quarto"
-          #- href: materials/02-authoring.qmd
-          #  text: "Authoring Quarto"
-          #- href: materials/03-computation-editors.qmd
-          #  text: "Code and Editors"
-          #- href: materials/04-static-documents.qmd
-          #  text: "Static Documents" 
-      #- text: Day 2
-      #  menu: 
-      #    - href: materials/05-presentations.qmd
-      #      text: "Presentations"
-      #    - href: materials/06-websites.qmd
-      #      text: "Websites & Books"
-      #    - href: materials/07-plots-tables.qmd
-      #      text: "Plots & Tables"
-      #    - href: materials/08-advanced-knitr.qmd
-      #      text: "Advanced Quarto"
+          - href: materials/02-authoring.qmd
+            text: "Authoring Quarto"
+          - href: materials/03-computation-editors.qmd
+            text: "Code and Editors"
+          - href: materials/04-static-documents.qmd
+            text: "Static Documents" 
+      - text: Week 02
+        menu: 
+          - href: materials/05-presentations.qmd
+            text: "Presentations"
+          - href: materials/06-websites.qmd
+            text: "Websites & Books"
+#         - href: materials/07-plots-tables.qmd
+#            text: "Plots & Tables"
+          #- href: materials/08-advanced-knitr.qmd
+          #  text: "Advanced Quarto"
       - href: schedule.qmd
         text: "Schedule"
-      #- href: workshop-materials.qmd
-      #  text: Workshop
+      - href: workshop-materials.qmd
+        text: Workshop
     right: 
       - href: "https://quarto.org/"
         text: "Quarto Docs"
       - icon: github
-        href: https://github.com/rstudio-conf-2022/get-started-quarto
+        href: https://github.com/SaulDiazInfante/intro-quarto-unison-2024.git
       - icon: twitter
         href: https://twitter.com/quarto_pub
   sidebar: 
     style: docked
     contents: 
-      - section: "Day 1"
-        #contents: 
-        #  - href: materials/01-intro-quarto.qmd
-        #    text: "Intro to Quarto"
-        #  - href: materials/02-authoring.qmd
-        #    text: "Authoring Quarto"
-        #  - href: materials/03-computation-editors.qmd
-        #    text: "Code and Editors"
-        #  - href: materials/04-static-documents.qmd
-        #    text: "Static Documents"
-      #- section: "Day 2"
-      #  contents:
-      #    - href: materials/05-presentations.qmd
-      #      text: "Presentations"
-      #    - href: materials/06-websites.qmd
-      #      text: "Websites & Books"
-      #    - href: materials/07-plots-tables.qmd
-      #      text: "Plots & Tables"
-      #    - href: materials/08-advanced-knitr.qmd
-      #      text: "Advanced Quarto"
+      - section: "Week 01"
+        contents: 
+          - href: materials/01-intro-quarto.qmd
+            text: "Intro to Quarto"
+          - href: materials/02-authoring.qmd
+            text: "Authoring Quarto"
+          - href: materials/03-computation-editors.qmd
+            text: "Code and Editors"
+          - href: materials/04-static-documents.qmd
+            text: "Static Documents"
+      - section: "Week 02"
+        contents:
+          - href: materials/05-presentations.qmd
+            text: "Presentations"
+          - href: materials/06-websites.qmd
+            text: "Websites & Books"
+#          - href: materials/07-plots-tables.qmd
+#            text: "Plots & Tables"
+          #- href: materials/08-advanced-knitr.qmd
+          #  text: "Advanced Quarto"
 
 format:
   html:
